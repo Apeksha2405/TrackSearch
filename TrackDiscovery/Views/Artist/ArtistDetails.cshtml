@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null; 
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Albums</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none; /* Remove underline from link */
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+            .back-button:hover {
+                background-color: #2980b9;
+            }
+
+        h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center; /* Center headings */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 600px; /* Limit the width of the list */
+            margin: 0 auto; /* Center the list */
+        }
+
+        li {
+            background-color: #ffffff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+            li:hover {
+                background-color: #ecf0f1;
+            }
+
+        .album-title {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <a href="~/Artist" class="back-button">Back</a>
+
+    <h3>Artist: @Model.Artist["name"]</h3>
+
+    <h3>Albums:</h3>
+    <ul>
+        @foreach (var album in Model.Albums)
+        {
+            <li>
+                <span class="album-title">@album["title"]</span>
+            </li>
+        }
+    </ul>
+</body>
+</html>

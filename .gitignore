@@ -1,0 +1,11 @@
+# Ignore Visual Studio temporary files and folders
+.vs/
+
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.rsuser
